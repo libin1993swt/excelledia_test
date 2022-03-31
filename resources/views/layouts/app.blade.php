@@ -53,6 +53,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts') }}"> Posts</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
                             </li>
                             <li class="nav-item dropdown">

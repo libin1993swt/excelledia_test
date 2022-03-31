@@ -4,19 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <table class="table table-striped">
+                
+                <tbody>
+                @foreach($posts as $post)
+                <tr>
+                    <td>
+                        <p>{{ $post->title }}</p>
+                        <p>{{ substr($post->body, 0, 100); }}</p>
+                        <p><a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">Show Post</a></p>
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+            </table>
         </div>
     </div>
 </div>
