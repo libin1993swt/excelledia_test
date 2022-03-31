@@ -24,4 +24,7 @@ Route::get('/post/show/{id}', [App\Http\Controllers\PostController::class, 'show
 Route::get('/post/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('/post/store', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
 
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

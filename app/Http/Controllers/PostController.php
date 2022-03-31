@@ -29,6 +29,7 @@ class PostController extends Controller
         $post =  new Post();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
+        $post->date = $request->get('date');
 
         $post->save();
 
