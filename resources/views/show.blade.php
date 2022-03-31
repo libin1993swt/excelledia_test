@@ -21,6 +21,7 @@
                     <h4>Display Comments</h4>
                     @include('partials._comment_replies', ['comments' => $post->comments, 'post_id' => $post->id])
                     <hr />
+                    @auth
                     <h4>Add comment</h4>
                     <form method="post" action="{{ route('comment.add') }}">
                         @csrf
@@ -33,6 +34,8 @@
                             <input type="submit" class="btn btn-warning" value="Add Comment" />
                         </div>
                     </form>
+                    @endauth 
+
                 </div>
             </div>
         </div>

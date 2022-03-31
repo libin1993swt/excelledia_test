@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     /**
@@ -27,5 +27,12 @@ class HomeController extends Controller
         $posts = Post::latest()->take(5)->get();
 
         return view('home', compact('posts'));
+    }
+
+    public function show($id)
+    {
+        $post = Post::with('comments')->find($id);
+        
+        return view('show', compact('post'));
     }
 }

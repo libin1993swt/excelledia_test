@@ -12,7 +12,7 @@
                     <td>
                         <p>{{ $post->title }}</p>
                         <p>{{ substr($post->body, 0, 100); }}</p>
-                        <p><a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">Show Post</a></p>
+                        <p><a href="{{ route('article.show', $post->id) }}" class="btn btn-primary">Show Post</a></p>
                     </td>
                 </tr>
                 @endforeach

@@ -27,3 +27,4 @@ Route::post('/reply/store', [App\Http\Controllers\CommentController::class, 'rep
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/show/{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('article.show');

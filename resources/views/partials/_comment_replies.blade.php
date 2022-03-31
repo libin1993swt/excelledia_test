@@ -4,6 +4,7 @@
     <div class="display-comment">
         <strong>{{ $comment->user->name }}</strong>
         <p>{{ $comment->body }}</p>
+        @auth
         <a href="" id="reply"></a>
         <form method="post" action="{{ route('reply.add') }}">
             @csrf
@@ -16,6 +17,7 @@
                 <input type="submit" class="btn btn-warning" value="Reply" />
             </div>
         </form>
+        @endauth 
         @include('partials._comment_replies', ['comments' => $comment->replies])
     </div>
 @endforeach
